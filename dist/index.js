@@ -1,3 +1,3 @@
 "use strict";
-const message = "Hello, World!";
+const message = "Hello, TypeScript!";
 console.log(message);
