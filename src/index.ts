@@ -1,12 +1,17 @@
-for(let i=1; i<=100;i++){
-    if(i%3 ===0 && i%5 ===0){
-        console.log("FizzBuzz");
-    }else if(i%3 ===0){
-        console.log("Fizz");
-    }else if(i%5 === 0){
-        console.log("Buzz")
-    }
-    else{
-       console.log(i);
-    }
+import { createInterface } from "readline";
+
+const rl = createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
+
+const messages = {
+    good: "0以上の数値が入力されました",
+    bad: "負の数値を入力しないでください"
 }
+
+rl.question('数値を入力してください:',(line) =>{
+    const num = Number(line);
+    console.log(messages[num >= 0 ? "good" : "bad"]);
+    rl.close()
+})
